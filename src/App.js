@@ -6,6 +6,7 @@ import Product from './Componet/Product/Product';
 import Review from './Componet/Review/Review';
 import NotFound from './Componet/NotFound/NotFound';
 import MangeInventor from './Componet/MangeInventor/MangeInventor';
+import Order from './Componet/Order/Order';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
       <Route path='/manage'element={<MangeInventor/>}></Route>
       <Route path='*'
      exact element={<NotFound/>}></Route>
+           <Route path='/order'element={<Order/>}></Route>
+
+
     </Routes>
     </BrowserRouter>
 

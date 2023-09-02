@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css'
+import { Link } from 'react-router-dom';
 const Card = (props) => {
     
     const totall = props.card
@@ -27,7 +28,7 @@ const Card = (props) => {
             <h3>Shiping Cost :{shipinCost}</h3>
             <h4>Vat & Tax :{vat}</h4>
             <h1>Totall Price : {all2+shipinCost+vat}</h1>
-            <button style={{padding:'10px'}}>Order Confirm</button>
+            <Link to='/order'><button style={{padding:'10px'}}>Order Confirm</button></Link>
             
         </div>
     );

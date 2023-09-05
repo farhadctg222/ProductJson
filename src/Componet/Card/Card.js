@@ -20,7 +20,7 @@ const Card = (props) => {
     }else{
         vat = 0
     }
-    console.log(props)
+   
         return (
         <div className='orderSummary' style={{border:'1px solid red',width:'500px'}}>
             <h1 className='heading'>Order Summary</h1>
@@ -28,7 +28,7 @@ const Card = (props) => {
             <h3>Shiping Cost :{shipinCost}</h3>
             <h4>Vat & Tax :{vat}</h4>
             <h1>Totall Price : {all2+shipinCost+vat}</h1>
-            <Link to='/order'><button style={{padding:'10px'}}>Order Confirm</button></Link>
+            <Link to='/review'><button style={{padding:'10px'}}>Order Confirm</button></Link>
             
         </div>
     );

@@ -7,6 +7,7 @@ import Review from './Componet/Review/Review';
 import NotFound from './Componet/NotFound/NotFound';
 import MangeInventor from './Componet/MangeInventor/MangeInventor';
 import Order from './Componet/Order/Order';
+import ProductDetals from './Componet/ProductDeatals/ProductDetals';
 
 
 function App() {
@@ -17,13 +18,15 @@ function App() {
     <BrowserRouter>
     <Header></Header>
     <Routes>
+    <Route path={"/product/:productid"}element={<ProductDetals/>}></Route>
     <Route path='/' element={<Product/>}></Route>
       <Route path='/shop' element={<Product/>}></Route>
       <Route path='/review'element={<Review/>}></Route>
       <Route path='/manage'element={<MangeInventor/>}></Route>
-      <Route path='*'
-     exact element={<NotFound/>}></Route>
-           <Route path='/order'element={<Order/>}></Route>
+      
+      
+      <Route path='/order'element={<Order/>}></Route>
+      <Route path='*'exact element={<NotFound/>}></Route>
 
 
     </Routes>

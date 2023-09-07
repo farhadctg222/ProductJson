@@ -1,20 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
+
 import Shop from '../Shop/Shop';
 import Card from '../Card/Card';
-import ProductDetals from '../ProductDeatals/ProductDetals';
-import { addToDatabaseCart, addToDb } from '../../utilities/fakedb';
+import {addToDatabaseCart, getDatabaseCart} from '../../utilities/fakedb';
+import fakedata from '../fakedata/Fakedata';
 
-const Product = (props) => {
+const Product = () => {
+  const [product,setproduct]= useState([]).slice(0,5)
+  const [card,setcard]= useState([])
+
+
+  useEffect(()=>{
+    const savecard = getDatabaseCart()
+    const sss = Object.keys(savecard)
+    const a = sss.map(pd=>{
+      const fake = fakedata.find(key =>key.id==pd)
+      const aa = savecard[pd]
+      console.log(fake)
+      return fake
+    })
+    setcard(a)
   
+  },[])
    
-  
-
-    const [product,setproduct]= useState([])
-    const [card,setcard]= useState([])
     const handle = (product)=>{
        const newcard = [...card,product]
        setcard(newcard)
        const  adnewproduct = newcard.filter(pd=>pd.id===product.id)
+       console.log(handle)
       addToDatabaseCart(product.id,adnewproduct)
      
     }
@@ -34,7 +48,11 @@ const Product = (props) => {
             }
            </div>
            <div className="card">
-            <Card card={card}></Card>
+            <Card card={card}>
+            <Link to='/review'>
+                  <button>Order Review</button>
+                  </Link>
+            </Card>
            </div>
             
         </div>

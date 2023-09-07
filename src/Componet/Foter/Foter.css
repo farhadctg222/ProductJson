@@ -1,0 +1,30 @@
+.foter-continar{
+  height:400px;
+    background-color: rgb(48, 66, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+}
+.detailName{
+  width: 50%;
+  background-color: aquamarine;
+  border: 1px solid red;
+  height: 300px;
+ text-align: center;
+  
+}
+.address{
+  width: 50%;
+  border: 1px solid pink;
+  height: 300px;
+}
+.btn{
+  height: 100px;
+}
+.btn:hover{
+ height: 50px;
+ background-color: rgb(12, 2, 9);
+ color: white;
+}

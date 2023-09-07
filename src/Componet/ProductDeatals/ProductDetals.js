@@ -5,6 +5,7 @@ import fakedata from '../fakedata/Fakedata';
 const ProductDetals = () => {
     // const [products,setproduct]= useState([])
     const {productid}= useParams()
+    const producti = parseFloat(productid)
 //    console.log(products)
 //     useEffect(()=>{
 //         fetch('https://fakestoreapi.com/products')
@@ -18,7 +19,7 @@ const ProductDetals = () => {
   
    const product = fakedata
    
-   const sss = product.find(pd=>pd.id==productid)
+   const sss = product.find(pd=>pd.id===producti)
    console.log(sss)
    const {image,title,description,price,id}= sss
     

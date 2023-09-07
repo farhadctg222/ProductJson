@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Children } from 'react';
 import './Card.css'
-import { Link } from 'react-router-dom';
 const Card = (props) => {
-    
+    console.log(props)
     const totall = props.card
     const all = totall.reduce((allproduct,product)=>allproduct+product.price,0)
     const all2 = Math.round(all)
@@ -28,7 +27,9 @@ const Card = (props) => {
             <h3>Shiping Cost :{shipinCost}</h3>
             <h4>Vat & Tax :{vat}</h4>
             <h1>Totall Price : {all2+shipinCost+vat}</h1>
-            <Link to='/review'><button style={{padding:'10px'}}>Order Confirm</button></Link>
+           {
+            props.children
+           }
             
         </div>
     );

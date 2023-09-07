@@ -8,6 +8,8 @@ import NotFound from './Componet/NotFound/NotFound';
 import MangeInventor from './Componet/MangeInventor/MangeInventor';
 import Order from './Componet/Order/Order';
 import ProductDetals from './Componet/ProductDeatals/ProductDetals';
+import Foter from './Componet/Foter/Foter';
+import Details from './Componet/Details/Details';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
 
     <BrowserRouter>
     <Header></Header>
+    
+
     <Routes>
     <Route path={"/product/:productid"}element={<ProductDetals/>}></Route>
     <Route path='/' element={<Product/>}></Route>
@@ -27,12 +31,14 @@ function App() {
       
       <Route path='/order'element={<Order/>}></Route>
       <Route path='*'exact element={<NotFound/>}></Route>
-
+      <Route path='/details'element={<Details/>}></Route>
 
     </Routes>
+    <Foter></Foter>
+    
     </BrowserRouter>
 
-      
+   
       
     </div>
      

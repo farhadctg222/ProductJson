@@ -1,15 +1,16 @@
-import React, { useEffect, useState,Link } from 'react';
+import React, { useEffect, useState,Link,useNaviGate, useContext } from 'react';
 import { clearLocalShoppingCart, getDatabaseCart, getShoppingCart, removeFromDatabaseCart } from '../../utilities/fakedb';
 import fakedata from './../fakedata/Fakedata';
 import ProductReview from '../ProductReview/ProductReview';
 import Card from './../Card/Card';
 import happuimage  from '../Review/giphy.gif'
+import {useNavigate } from 'react-router-dom';
 
 
-const Review = () => {
+const Review = ({children,...rest}) => {
     const [card,setcard]= useState([])
     const [orderplace,setorderplace]= useState(false)
-    
+    const history = useNavigate()
 
     const handleRemove = (productid)=>{
         const newcard = card.filter(pd=>pd.id!==productid)
@@ -18,9 +19,7 @@ const Review = () => {
     }
     const handleRemoves = ()=>{
      
-      setcard([])
-      setorderplace(true)
-      clearLocalShoppingCart()
+      history('/shipment')
       
     }
    
@@ -50,6 +49,7 @@ const Review = () => {
       thanke =  <img src={happuimage} alt="" />
 
     }
+  
     return (
         <div className='card-shop'>
             <h1>Review your product {card.length}</h1>
@@ -64,7 +64,7 @@ const Review = () => {
           </div>
           <div className="continar">
             <Card card={card}>
-            <button onClick={handleRemoves} className='btnOrder'style={{backgroundColor:'pink',height:'100px'}}>Order Confirm</button>
+            <button onClick={handleRemoves} className='btnOrder'style={{backgroundColor:'pink',height:'100px'}}>Procceud Checkout</button>
             </Card>
           </div>
 

@@ -3,7 +3,7 @@ import './shop.css'
 import { Link } from 'react-router-dom';
 
 const Shop = (props) => {
- 
+
   
     
     const {title,description,price,image,id}= props.product

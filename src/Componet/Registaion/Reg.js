@@ -32,9 +32,9 @@ const Reg = () => {
         .then(res=>{
             const isSignout={
                 isSignUser: false,
-            displayName:'',
-            email:'',
-            photo:''
+    displayName:'',
+    email:'',
+    photo:''
             }
             setuser(isSignout)
         })

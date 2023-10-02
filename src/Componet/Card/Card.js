@@ -33,7 +33,7 @@ const Card = (props) => {
             props.children
            }
            <div style={{textAlign:'center'}}>
-           <img style={{widows:'200px',height:'200px'}} src={img} alt="" /> <h4>www.bdshop.com</h4><h5>Managing Director</h5>
+           <img style={{widows:'200px',height:'200px'}} src={img} alt="" /> <h4>www.satkania-eshop.netlify.app</h4><h5>Managing Director</h5>
           <Link to="/personal"style={{backgroundColor:'pink'}}>আমার কিছু কথা</Link>
 
            </div>

@@ -24,7 +24,7 @@ const Card = (props) => {
    
         return (
         <div className='orderSummary' style={{border:'1px solid red',width:'500px'}}>
-            <h1 className='heading'>Order Summary</h1>
+            <h1 className='heading'>Order Checkout</h1>
             <h2>Order Count :{props.card.length}</h2>
             <h3>Shiping Cost :{shipinCost}</h3>
             <h4>Vat & Tax :{vat}</h4>
